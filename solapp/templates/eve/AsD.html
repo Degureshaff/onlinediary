@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+body {font-family: "Lato", sans-serif;}
+
+/* Style the tab */
+.tab {
+    float: left;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    width: 30%;
+    height: 300px;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    float: left;
+    padding: 0px 12px;
+    border: 1px solid #ccc;
+    width: 70%;
+    border-left: none;
+    height: 300px;
+}
+</style>
+</head>
+<body>
+<h3>Uz</h3>
+
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'backend')" id="defaultOpen">backend</button>
+  <button class="tablinks" onclick="openCity(event, 'Frontend')">Frontend</button>
+  <button class="tablinks" onclick="openCity(event, 'fullstack')">fullstack</button>
+  <button class="tablinks" onclick="openCity(event, 'UI')">UI</button>
+</div>
+<div id="backend" class="tabcontent">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.css">
+    <table class="table table-bordered border-primary">
+        <tr>
+            <td>имя</td>
+            <td>фамилия</td>
+            <td>номер</td>
+            <td>1 месяц</td>
+            <td>2 месяц</td>
+            <td>3 месяц</td>
+            <td>Полная оплата</td>
+            <td style="width: 20%;">Действие</td>
+            <a href= '/EvPersonBCUz/create/' class="btn btn-light">Добавить</a>
+        </tr>
+        <tr>
+            {% for mgBcUz in mgBcUz %}
+                <tr>
+                    <td>{{ mgBcUz.name }}</td>
+                    <td>{{ mgBcUz.surname }}</td>
+                    <td>{{ mgBcUz.mobile }}</td>
+                    <td>{{ mgBcUz.summ1 }}</td>
+                    <td>{{ mgBcUz.summ2 }}</td>
+                    <td>{{ mgBcUz.summ3 }}</td>
+                    <td>{{ mgBcUz.summfull }}</td>
+                    <td>
+                        <a href= '/EvPersonBCUz/{{ mgBcUz.id }}/update/' class="btn btn-light">edit</a>
+                        <a href= '/EvPersonBCUz/{{ mgBcUz.id }}/delete/' class="btn btn-light">del</a>
+                    </td>
+            {% endfor %}
+        </tr>
+    </table>
+</div>
+<div id="Frontend" class="tabcontent">
+        <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.css">
+        <table class="table table-bordered border-primary">
+            <tr>
+                <td>имя</td>
+                <td>фамилия</td>
+                <td>номер</td>
+                <td>1 месяц</td>
+                <td>2 месяц</td>
+                <td>3 месяц</td>
+                <td>Полная оплата</td>
+                <td style="width: 20%;">Действие</td>
+                <a href= '/EvPersonFronUz/create/' class="btn btn-light">Добавить</a>
+            </tr>
+            <tr>
+                {% for mgfronUz in mgfronUz %}
+                    <tr>
+                        <td>{{ mgfronUz.name }}</td>
+                        <td>{{ mgfronUz.surname }}</td>
+                        <td>{{ mgfronUz.mobile }}</td>
+                        <td>{{ mgfronUz.summ1 }}</td>
+                        <td>{{ mgfronUz.summ2 }}</td>
+                        <td>{{ mgfronUz.summ3 }}</td>
+                        <td>{{ mgfronUz.summfull }}</td>
+                        <td>
+                            <a href= '/EvPersonFronUz/{{ mgfronUz.id }}/update/' class="btn btn-light">edit</a>
+                            <a href= '/EvPersonFronUz/{{ mgfronUz.id }}/delete/' class="btn btn-light">del</a>
+                        </td>
+                {% endfor %}
+            </tr>
+        </table>
+</div>
+
+<div id="fullstack" class="tabcontent">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.css">
+    <table class="table table-bordered border-primary">
+        <tr>
+            <td>имя</td>
+            <td>фамилия</td>
+            <td>номер</td>
+            <td>1 месяц</td>
+            <td>2 месяц</td>
+            <td>3 месяц</td>
+            <td>Полная оплата</td>
+            <td style="width: 20%;">Действие</td>
+            <a href= '/EvPersonFullUz/create/' class="btn btn-light">Добавить</a>
+        </tr>
+        <tr>
+            {% for mgfullUz in mgfullUz %}
+                <tr>
+                    <td>{{ mgfullUz.name }}</td>
+                    <td>{{ mgfullUz.surname }}</td>
+                    <td>{{ mgfullUz.mobile }}</td>
+                    <td>{{ mgfullUz.summ1 }}</td>
+                    <td>{{ mgfullUz.summ2 }}</td>
+                    <td>{{ mgfullUz.summ3 }}</td>
+                    <td>{{ mgfullUz.summfull }}</td>
+                    <td>
+                        <a href= '/EvPersonFullUz/{{ mgfullUz.id }}/update/' class="btn btn-light">edit</a>
+                        <a href= '/EvPersonFullUz/{{ mgfullUz.id }}/delete/' class="btn btn-light">del</a>
+                    </td>
+            {% endfor %}
+        </tr>
+    </table>
+</div>
+</div>
+
+<div id="UI" class="tabcontent">
+
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.css">
+    <table class="table table-bordered border-primary">
+        <tr>
+            <td>имя</td>
+            <td>фамилия</td>
+            <td>номер</td>
+            <td>1 месяц</td>
+            <td>2 месяц</td>
+            <td>3 месяц</td>
+            <td>Полная оплата</td>
+            <td style="width: 20%;">Действие</td>
+            <a href= '/EvPersonUIUz/create/' class="btn btn-light">Добавить</a>
+        </tr>
+        <tr>
+            {% for mguiUz in mguiUz %}
+                <tr>
+                    <td>{{ mguiUz.name }}</td>
+                    <td>{{ mguiUz.surname }}</td>
+                    <td>{{ mguiUz.mobile }}</td>
+                    <td>{{ mguiUz.summ1 }}</td>
+                    <td>{{ mguiUz.summ2 }}</td>
+                    <td>{{ mguiUz.summ3 }}</td>
+                    <td>{{ mguiUz.summfull }}</td>
+                    <td>
+                        <a href= '/EvPersonUIUz/{{ mguiUz.id }}/update/' class="btn btn-light">edit</a>
+                        <a href= '/EvPersonUIUz/{{ mguiUz.id }}/delete/' class="btn btn-light">del</a>
+                    </td>
+            {% endfor %}
+        </tr>
+    </table>
+
+  </div>
+
+<script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+     
+</body>
+</html> 

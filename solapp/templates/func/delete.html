@@ -1,0 +1,9 @@
+<div class="main">
+    <form method="POST">
+        {% csrf_token %}
+        вы точно хотите удалить?
+        <input type="submit" value="Да" />
+        <a href="/">отмена</a>
+    </form>
+</div>
+

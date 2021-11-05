@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="/static/bootstrap/css/bootstrap.css">
+<table class="table table-bordered border-primary">
+    <tr>
+        <td>имя</td>
+        <td>фамилия</td>
+        <td>номер</td>
+        <td>1 месяц</td>
+        <td>2 месяц</td>
+        <td>3 месяц</td>
+        <td>Полная оплата</td>
+        <td style="width: 20%;">Действие</td>
+        <a href= '/PersonBCOsh/create/' class="btn btn-light">Добавить</a>
+    </tr>
+    <tr>
+        {% for mgBCOsh in mgBcOsh %}
+            <tr>
+                <td>{{ mgBCOsh.name }}</td>
+                <td>{{ mgBCOsh.surname }}</td>
+                <td>{{ mgBCOsh.mobile }}</td>
+                <td>{{ mgBCOsh.summ1 }}</td>
+                <td>{{ mgBCOsh.summ2 }}</td>
+                <td>{{ mgBCOsh.summ3 }}</td>
+                <td>{{ mgBCOsh.summfull }}</td>
+                <td>
+                    <a href= '/PersonBCOsh/{{ mgOSH.id }}/update/' class="btn btn-light">edit</a>
+                    <a href= '/PersonBCOsh/{{ mgOSH.id }}/delete/' class="btn btn-light">del</a>
+                </td>
+        {% endfor %}
+    </tr>
+</table>

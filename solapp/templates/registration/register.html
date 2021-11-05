@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="/static/log.css">
+<link rel='stylesheet' href='/static/bootstrap/css/bootstrap.css'>
+  <form method='post'>
+      <div class="box">
+      <h1>registration</h1>
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="имя пользователя"><br>
+        <input type="email" name="email" placeholder='Email'><br>
+        <input type="password" name="password" placeholder="Пароль"><br>
+        <input type="password" name="password2" placeholder="Пароль еще раз"><br>
+        <input type="submit" value="Регистрация">
+      </div>
+  </form>
+</div>
